@@ -82,4 +82,6 @@ return {
       )
     end,
   },
+    -- Add the vim-colemak plugin
+  "arecatsreal/vim-colemak",
 }
