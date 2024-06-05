@@ -32,3 +32,8 @@ git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```shell
 nvim
 ```
+
+#### TODOs
+
+- [ ] Add windowmotion keys to whichkeys (or any other form of documentation of shortcuts)
+- [ ] Add Colemak motion keys to nvim-tree at the same time making sure that none of bindings providing functionality are overwritten.
