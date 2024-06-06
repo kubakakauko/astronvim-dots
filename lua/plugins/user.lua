@@ -84,4 +84,5 @@ return {
   },
     -- Add the vim-colemak plugin
   "arecatsreal/vim-colemak",
+  "nvimtools/none-ls-extras.nvim",
 }

@@ -12,12 +12,12 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
-        "tsserver",          -- JavaScript/TypeScript
-        "tailwindcss",       -- TailwindCSS
-        "eslint",            -- JavaScript/TypeScript
-        "cssls",             -- CSS
-        "html",              -- HTML
-        "typos_lsp",         -- Markdown
+        "tsserver", -- JavaScript/TypeScript
+        "tailwindcss", -- TailwindCSS
+        "eslint", -- JavaScript/TypeScript
+        "cssls", -- CSS
+        "html", -- HTML
+        "typos_lsp", -- Markdown
         -- add more arguments for adding more language servers
       })
     end,
@@ -30,10 +30,19 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "stylua",
-        "eslint_d",            -- Linter for JavaScript/TypeScript
-        "stylelint",           -- Linter for CSS
-        "htmlhint",            -- Linter for HTML
-        "prettier",            -- Formatter for JavaScript/TypeScript/CSS/HTML
+        "eslint_d", -- Linter for JavaScript/TypeScript
+        "stylelint", -- Linter for CSS
+        "htmlhint", -- Linter for HTML
+        "prettier", -- Formatter for JavaScript/TypeScript/CSS/HTML
+        "eslint_lsp",
+        "semgrep",
+        "gitsigns",
+        "dictionary",
+        "write_good",
+        "rustywind",
+        "pylint",
+        "black",
+        "prettierd",
         -- add more arguments for adding more null-ls sources
       })
     end,
