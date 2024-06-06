@@ -7,9 +7,9 @@ vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true,
 vim.api.nvim_set_keymap("n", "<C-n>", "<C-w>j", { noremap = true, silent = true, desc = "Move to bottom window" })
 vim.api.nvim_set_keymap("n", "<C-e>", "<C-w>k", { noremap = true, silent = true, desc = "Move to top window" })
 vim.api.nvim_set_keymap("n", "<C-i>", "<C-w>l", { noremap = true, silent = true, desc = "Move to right window" })
--- Unmap conflicting keys in normal mode
-vim.api.nvim_del_keymap("n", "gc")
-vim.api.nvim_del_keymap("n", "gb")
+-- -- Unmap conflicting keys in normal mode
+-- vim.api.nvim_del_keymap("n", "gc")
+-- vim.api.nvim_del_keymap("n", "gb")
 
 -- alternative keybinging for Hover Symbol Details
 vim.api.nvim_set_keymap(
