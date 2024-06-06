@@ -37,3 +37,4 @@ nvim
 
 - [ ] Add windowmotion keys to whichkeys (or any other form of documentation of shortcuts)
 - [ ] Add Colemak motion keys to nvim-tree at the same time making sure that none of bindings providing functionality are overwritten.
+- [ ] Add Documentation to the CTRL + o and CTRL + ; which are responsible for switching the files back and forward (also its not the best comibination of keys so this may need to be changed later)
