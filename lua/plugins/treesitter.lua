@@ -8,17 +8,22 @@ return {
   opts = function(_, opts)
     -- add more things to the ensure_installed table protecting against community packs modifying it
     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-      "lua",       -- Lua for Neovim configurations
-      "vim",       -- Vimscript
+      "lua", -- Lua for Neovim configurations
+      "vim", -- Vimscript
       "javascript", -- JavaScript
       "typescript", -- TypeScript
-      "css",        -- CSS
-      "html",       -- HTML
-      "tsx",        -- JSX/TSX for React
-      "json",       -- JSON
-      "yaml",       -- YAML
-      "markdown",   -- Markdown for documentation
-      -- add more parsers if needed
+      "css", -- CSS
+      "html", -- HTML
+      "tsx", -- JSX/TSX for React
+      "json", -- JSON
+      "yaml", -- YAML
+      "markdown", -- Markdown for documentation
+      "graphql",
+      "gitignore",
+      "markdown_inline",
+      "regex",
+      "bash",
+      "astro",
     })
   end,
 }
