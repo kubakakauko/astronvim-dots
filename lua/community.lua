@@ -24,12 +24,14 @@ return {
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  { import = "astrocommunity.split-and-window.edgy-nvim" },
+
+  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
   { import = "astrocommunity.split-and-window.windows-nvim" },
+  -- { import = "astrocommunity.workflow.precognition-nvim" },
+  { import = "astrocommunity.workflow.hardtime-nvim" },
   {
     "jay-babu/project.nvim",
     opts = function(_, opts) opts.patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" } end,
@@ -98,44 +100,21 @@ return {
     end,
   },
   {
-    "oil.nvim",
-    opts = {
-      use_default_keymaps = false,
-      keymaps = {
-        ["<Esc>"] = "actions.close",
-        ["q"] = "actions.close",
-        ["<CR>"] = "actions.select",
-        ["g"] = "actions.select",
-        ["b"] = "actions.parent",
-        ["?"] = "actions.show_help",
-        ["<C-p>"] = "actions.preview",
-        ["<C-r>"] = "actions.refresh",
-        ["<C-t>"] = "actions.select_tab",
-
-        ["_"] = "actions.open_cwd",
-        ["`"] = "actions.cd",
-        ["~"] = "actions.tcd",
-        ["<C-f>"] = "actions.change_sort",
-        ["<C-e>"] = "actions.open_external",
-        ["<C-.>"] = "actions.toggle_hidden",
-      },
-    },
-    keys = {
-      { "<leader>O", false },
-      { "<leader>e", function() require("oil").open() end, desc = "Explorer in current file folder" },
-      {
-        "<leader>E",
-        function() require("oil").open(require("project_nvim").get_project_root()) end,
-        desc = "Explorer at project root",
-      },
-    },
-  },
-  {
     "noice.nvim",
     opts = function(_, opts)
       opts.presets.bottom_search = false
       opts.lsp.signature = { enabled = false }
       return opts
     end,
+  },
+  {
+    "edgy.nvim",
+    opts = {
+      keys = {
+        -- Update your custom keybindings here
+        ["<Leader>M"] = { function() require("edgy").toggle() end, desc = "Toggle Sidebars" },
+        ["<Leader>m"] = { function() require("edgy").select() end, desc = "Pick Sidebar" },
+      },
+    },
   },
 }
