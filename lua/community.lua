@@ -27,8 +27,7 @@ return {
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-
-  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
+  { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.split-and-window.windows-nvim" },
   -- { import = "astrocommunity.workflow.precognition-nvim" },
   { import = "astrocommunity.workflow.hardtime-nvim" },
@@ -108,12 +107,17 @@ return {
     end,
   },
   {
-    "edgy.nvim",
+    "echasnovski/mini.move",
     opts = {
-      keys = {
-        -- Update your custom keybindings here
-        ["<Leader>M"] = { function() require("edgy").toggle() end, desc = "Toggle Sidebars" },
-        ["<Leader>m"] = { function() require("edgy").select() end, desc = "Pick Sidebar" },
+      mappings = {
+        left = "<A-h>",
+        right = "<A-i>",
+        down = "<A-n>",
+        up = "<A-e>",
+        line_left = "<A-h>",
+        line_right = "<A-i>",
+        line_down = "<A-n>",
+        line_up = "<A-e>",
       },
     },
   },
