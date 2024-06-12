@@ -14,6 +14,8 @@ vim.api.nvim_set_keymap("n", "<C-i>", "<C-w>l", { noremap = true, silent = true,
 -- Remap e and E motions to f and F for Colemak layout
 vim.api.nvim_set_keymap("n", "f", "e", { noremap = true, silent = true, desc = "Move to end of word" })
 vim.api.nvim_set_keymap("n", "F", "E", { noremap = true, silent = true, desc = "Move to end of WORD" })
+vim.api.nvim_set_keymap("v", "f", "e", { noremap = true, silent = true, desc = "Move to end of word" })
+vim.api.nvim_set_keymap("v", "F", "E", { noremap = true, silent = true, desc = "Move to end of WORD" })
 -- alternative keybinging for Hover Symbol Details
 vim.api.nvim_set_keymap(
   "n",

@@ -7,30 +7,145 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
-  { import = "astrocommunity.colorscheme.tokyodark-nvim" },
   { import = "astrocommunity.scrolling.satellite-nvim" },
-  { import = "astrocommunity.scrolling.mini-animate" },
-  { import = "astrocommunity.lsp.actions-preview-nvim" },
-  { import = "astrocommunity.project.project-nvim" },
-  { import = "astrocommunity.motion.harpoon" },
-  { import = "astrocommunity.project.nvim-spectre" },
-  { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  { import = "astrocommunity.motion.nvim-surround" },
-  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
-  { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
-  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.split-and-window.windows-nvim" },
-  -- { import = "astrocommunity.workflow.precognition-nvim" },
-  { import = "astrocommunity.workflow.hardtime-nvim" },
+
+  -- workflow
+  -- { import = "astrocommunity.workflow.hardtime-nvim" },
+
+  { import = "astrocommunity.workflow.precognition-nvim" },
+
+  -- file explorer
+  { import = "astrocommunity.file-explorer.oil-nvim" },
+
+  -- colorscheme
+  { import = "astrocommunity.colorscheme.tokyodark-nvim" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+
+  -- motion
+  { import = "astrocommunity.motion.harpoon" },
+  { import = "astrocommunity.motion.hop-nvim" },
+  { import = "astrocommunity.motion.mini-move" },
+  { import = "astrocommunity.motion.nvim-surround" },
+
+  -- project
+  { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.project.project-nvim" },
+
+  -- editing
+  { import = "astrocommunity.editing-support.dial-nvim" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+
+  -- pack
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.tailwindcss" },
+
+  -- lsp
+  { import = "astrocommunity.lsp.delimited-nvim" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.lsp.actions-preview-nvim" },
+
+  -- recipes
+  { import = "astrocommunity.recipes.neovide" },
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+
+  -- bars and lines
+  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  {
+    "smoka7/hop.nvim",
+    opts = function()
+      require("hop").setup {
+        keys = "etovxqpdygfblzhckisuran", -- Colemak layout keys
+      }
+    end,
+    dependencies = {
+      "AstroNvim/astrocore",
+      opts = {
+        mappings = {
+          n = {
+            ["s"] = { function() require("hop").hint_char2() end, desc = "Hop to character 2" },
+            ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop to lines" },
+          },
+          v = {
+            ["s"] = { function() require("hop").hint_char2 { extend_visual = true } end, desc = "Hop to character 2" },
+            ["<S-s>"] = { function() require("hop").hint_lines { extend_visual = true } end, desc = "Hop to lines" },
+          },
+        },
+      },
+    },
+  },
+  {
+    "dial.nvim",
+    opts = {
+      mappings = {
+        v = {
+          ["<C-a>"] = {
+            function() return require("dial.map").manipulate("increment", "visual") end,
+            desc = "Increment",
+          },
+          ["<C-A>"] = {
+            function() return require("dial.map").manipulate("decrement", "visual") end,
+            desc = "Decrement",
+          },
+        },
+        x = {
+          ["g<C-a>"] = {
+            function() return require("dial.map").manipulate("increment", "gvisual") end,
+            desc = "Increment",
+          },
+          ["g<C-A>"] = {
+            function() return require("dial.map").manipulate("decrement", "gvisual") end,
+            desc = "Decrement",
+          },
+        },
+        n = {
+          ["<C-a>"] = {
+            function() return require("dial.map").manipulate("increment", "normal") end,
+            desc = "Increment",
+          },
+          ["<C-A>"] = {
+            function() return require("dial.map").manipulate("decrement", "normal") end,
+            desc = "Decrement",
+          },
+          ["g<C-a>"] = {
+            function() return require("dial.map").manipulate("increment", "gnormal") end,
+            desc = "Increment",
+          },
+          ["g<C-A>"] = {
+            function() return require("dial.map").manipulate("decrement", "gnormal") end,
+            desc = "Decrement",
+          },
+        },
+      },
+    },
+  },
+  -- { import = "astrocommunity.workflow.hardtime-nvim" },
+  {
+    "precognition.nvim",
+    opts = {
+      hints = {
+        Caret = { text = "^", prio = 2 },
+        Dollar = { text = "$", prio = 1 },
+        MatchingPair = { text = "%", prio = 5 },
+        Zero = { text = "0", prio = 1 },
+        w = { text = "w", prio = 10 },
+        b = { text = "b", prio = 9 },
+        e = { text = "f", prio = 8 },
+        W = { text = "W", prio = 7 },
+        B = { text = "B", prio = 6 },
+        E = { text = "F", prio = 5 },
+      },
+    },
+  },
+
   {
     "jay-babu/project.nvim",
     opts = function(_, opts) opts.patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" } end,
@@ -39,6 +154,14 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      -- Add the `neo-tree` filetype to the `disabled_filetypes` option
+      opts.options = vim.tbl_extend("force", opts.options or {}, {
+        disabled_filetypes = {
+          statusline = {},
+          winbar = { "neo-tree", "nvim-tree" },
+        },
+      })
+
       opts.winbar = {
         lualine_a = { "mode" },
         lualine_b = { "branch", "diff", "diagnostics" },
@@ -84,8 +207,6 @@ return {
       }
 
       opts.inactive_winbar = {
-        lualine_a = opts.winbar.lualine_a,
-        lualine_b = opts.winbar.lualine_b,
         lualine_c = opts.winbar.lualine_c,
         lualine_x = {},
         lualine_y = {},
@@ -94,6 +215,7 @@ return {
 
       opts.sections = {}
       opts.inactive_sections = {}
+      opts.extentensions = { "fugitive", "nvim-tree", "quickfix", "toggleterm", "packer", "oil" }
 
       return opts
     end,
@@ -106,18 +228,19 @@ return {
       return opts
     end,
   },
+
   {
     "echasnovski/mini.move",
     opts = {
       mappings = {
-        left = "<A-h>",
-        right = "<A-i>",
-        down = "<A-n>",
-        up = "<A-e>",
-        line_left = "<A-h>",
-        line_right = "<A-i>",
-        line_down = "<A-n>",
-        line_up = "<A-e>",
+        left = "<M-S-h>",
+        right = "<M-S-i>",
+        down = "<M-S-n>",
+        up = "<M-S-e>",
+        line_left = "<M-S-h>",
+        line_right = "<M-S-i>",
+        line_up = "<M-S-e>",
+        line_down = "<M-S-n>",
       },
     },
   },
