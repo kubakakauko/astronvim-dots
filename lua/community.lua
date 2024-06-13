@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.split-and-window.windows-nvim" },
-
+  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   -- workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
 
@@ -54,6 +54,7 @@ return {
   -- recipes
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
 
   -- bars and lines
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
