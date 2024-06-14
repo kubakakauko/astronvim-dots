@@ -34,7 +34,7 @@ return {
 
   -- project
   { import = "astrocommunity.project.nvim-spectre" },
-  { import = "astrocommunity.project.project-nvim" },
+  -- { import = "astrocommunity.project.project-nvim" },
 
   -- editing
   { import = "astrocommunity.editing-support.dial-nvim" },
@@ -147,10 +147,30 @@ return {
     },
   },
 
-  {
-    "jay-babu/project.nvim",
-    opts = function(_, opts) opts.patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" } end,
-  },
+  -- {
+  --   "jay-babu/project.nvim",
+  --   opts = function(_, opts)
+  --     opts.patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" }
+  --     opts.scope_chdir = "global"
+  --   end,
+  --   config = function()
+  --     require("project_nvim").setup {
+  --       patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" },
+  --       scope_chdir = "global",
+  --     }
+  --
+  --     require("neo-tree").setup {
+  --       sync_root_with_cwd = true,
+  --       respect_buf_cwd = true,
+  --       update_focused_file = {
+  --         enable = true,
+  --         update_root = true,
+  --       },
+  --     }
+  --
+  --     require("telescope").load_extension "projects"
+  --   end,
+  -- },
 
   {
     "nvim-lualine/lualine.nvim",
@@ -159,7 +179,7 @@ return {
       opts.options = vim.tbl_extend("force", opts.options or {}, {
         disabled_filetypes = {
           statusline = {},
-          winbar = { "neo-tree", "nvim-tree" },
+          winbar = { "neo-tree" },
         },
       })
 

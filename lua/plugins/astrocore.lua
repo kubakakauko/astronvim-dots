@@ -58,11 +58,11 @@ return {
         dirs = {}, -- list of directory patterns (Ex. { "~/.cargo/*" })
       },
       -- automatically update working directory (update manually with `:AstroRoot`)
-      autochdir = true,
+      autochdir = false,
       -- scope of working directory to change ("global"|"tab"|"win")
       scope = "global",
       -- show notification on every working directory change
-      notify = true,
+      notify = false,
     },
     -- Configuration table of session options for AstroNvim's session management powered by Resession
     sessions = {

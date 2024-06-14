@@ -34,7 +34,7 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_far_lines = 1
 
   -- Refresh rate for smoothness
-  vim.g.neovide_refresh_rate = 144
+  vim.g.neovide_refresh_rate = 200
   vim.g.neovide_cursor_antialiasing = true
   vim.g.neovide_cursor_animate_in_insert_mode = true
   vim.g.neovide_cursor_smooth_blink = true
