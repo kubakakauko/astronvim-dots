@@ -103,7 +103,14 @@ return {
   -- Add the vim-colemak plugin
   "arecatsreal/vim-colemak",
   "nvimtools/none-ls-extras.nvim",
-
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = { layout_config = { horizontal = { preview_cutoff = 0 } } },
+      pickers = { colorscheme = { enable_preview = true } },
+    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

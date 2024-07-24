@@ -25,6 +25,47 @@ return {
   -- colorscheme
   { import = "astrocommunity.colorscheme.tokyodark-nvim" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { import = "astrocommunity.colorscheme.aurora" },
+  { import = "astrocommunity.colorscheme.nord-nvim" },
+  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.colorscheme.bamboo-nvim" },
+  { import = "astrocommunity.colorscheme.bluloco-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.citruszest-nvim" },
+  { import = "astrocommunity.colorscheme.cyberdream-nvim" },
+  { import = "astrocommunity.colorscheme.dracula-nvim" },
+  { import = "astrocommunity.colorscheme.eldritch-nvim" },
+  { import = "astrocommunity.colorscheme.everforest" },
+  { import = "astrocommunity.colorscheme.fluoromachine-nvim" },
+  { import = "astrocommunity.colorscheme.github-nvim-theme" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { import = "astrocommunity.colorscheme.helix-nvim" },
+  { import = "astrocommunity.colorscheme.hybrid-nvim" },
+  { import = "astrocommunity.colorscheme.iceberg-vim" },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
+  { import = "astrocommunity.colorscheme.kanagawa-paper-nvim" },
+  { import = "astrocommunity.colorscheme.lackluster-nvim" },
+  { import = "astrocommunity.colorscheme.melange-nvim" },
+  { import = "astrocommunity.colorscheme.mellifluous-nvim" },
+  { import = "astrocommunity.colorscheme.mellow-nvim" },
+  { import = "astrocommunity.colorscheme.miasma-nvim" },
+  { import = "astrocommunity.colorscheme.mini-base16" },
+  { import = "astrocommunity.colorscheme.modus-nvim" },
+  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
+  { import = "astrocommunity.colorscheme.neofusion-nvim" },
+  { import = "astrocommunity.colorscheme.neosolarized-nvim" },
+  { import = "astrocommunity.colorscheme.night-owl-nvim" },
+  { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  { import = "astrocommunity.colorscheme.nordic-nvim" },
+  { import = "astrocommunity.colorscheme.nvim-juliana" },
+  { import = "astrocommunity.colorscheme.oldworld-nvim" },
+  { import = "astrocommunity.colorscheme.oxocarbon-nvim" },
+  { import = "astrocommunity.colorscheme.poimandres-nvim" },
+  { import = "astrocommunity.colorscheme.rose-pine" },
+  { import = "astrocommunity.colorscheme.solarized-osaka-nvim" },
+  { import = "astrocommunity.colorscheme.sonokai" },
+  { import = "astrocommunity.colorscheme.vim-dogrun" },
 
   -- motion
   { import = "astrocommunity.motion.harpoon" },
@@ -33,8 +74,7 @@ return {
   { import = "astrocommunity.motion.nvim-surround" },
 
   -- project
-  { import = "astrocommunity.project.nvim-spectre" },
-  -- { import = "astrocommunity.project.project-nvim" },
+  { import = "astrocommunity.search.nvim-spectre" },
 
   -- editing
   { import = "astrocommunity.editing-support.dial-nvim" },
@@ -59,7 +99,10 @@ return {
   -- bars and lines
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
-  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+
   {
     "smoka7/hop.nvim",
     opts = function()
@@ -148,99 +191,75 @@ return {
   },
 
   -- {
-  --   "jay-babu/project.nvim",
+  --   "nvim-lualine/lualine.nvim",
   --   opts = function(_, opts)
-  --     opts.patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" }
-  --     opts.scope_chdir = "global"
-  --   end,
-  --   config = function()
-  --     require("project_nvim").setup {
-  --       patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile" },
-  --       scope_chdir = "global",
-  --     }
-  --
-  --     require("neo-tree").setup {
-  --       sync_root_with_cwd = true,
-  --       respect_buf_cwd = true,
-  --       update_focused_file = {
-  --         enable = true,
-  --         update_root = true,
+  --     -- Add the `neo-tree` filetype to the `disabled_filetypes` option
+  --     opts.options = vim.tbl_extend("force", opts.options or {}, {
+  --       disabled_filetypes = {
+  --         statusline = {},
+  --         winbar = { "neo-tree" },
   --       },
+  --     })
+  --
+  --     opts.winbar = {
+  --       lualine_a = { "mode" },
+  --       lualine_b = { "branch", "diff", "diagnostics" },
+  --       lualine_c = {
+  --         {
+  --           "filename",
+  --           path = 1,
+  --
+  --           file_status = true, -- Displays file status (readonly status, modified status)
+  --           newfile_status = false, -- Display new file status (new file means no write after created)
+  --
+  --           shorting_target = 40, -- Shortens path to leave 40 spaces in the window
+  --           -- for other components. (terrible name, any suggestions?)
+  --           symbols = {
+  --             modified = "", -- Text to show when the file is modified.
+  --             readonly = "", -- Text to show when the file is non-modifiable or readonly.
+  --             unnamed = "", -- Text to show for unnamed buffers.
+  --             newfile = "", -- Text to show for newly created file before first write
+  --             directory = "",
+  --             oil = "",
+  --           },
+  --
+  --           filetype_names = {
+  --             TelescopePrompt = "Telescope ",
+  --             dashboard = "Dashboard",
+  --             packer = "Packer",
+  --             fzf = "FZF",
+  --             alpha = "Dashboard",
+  --             oil = "",
+  --           },
+  --         },
+  --       },
+  --       lualine_x = { "encoding", "fileformat", "filetype" },
+  --       lualine_y = {
+  --         { "progress" },
+  --         {
+  --           "searchcount",
+  --           maxcount = 999,
+  --           timeout = 500,
+  --         },
+  --       },
+  --       lualine_z = { "location" },
   --     }
   --
-  --     require("telescope").load_extension "projects"
+  --     opts.inactive_winbar = {
+  --       lualine_c = opts.winbar.lualine_c,
+  --       lualine_x = {},
+  --       lualine_y = {},
+  --       lualine_z = {},
+  --     }
+  --
+  --     opts.sections = {}
+  --     opts.inactive_sections = {}
+  --     opts.extentensions = { "fugitive", "nvim-tree", "quickfix", "toggleterm", "packer", "oil" }
+  --
+  --     return opts
   --   end,
   -- },
-
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = function(_, opts)
-      -- Add the `neo-tree` filetype to the `disabled_filetypes` option
-      opts.options = vim.tbl_extend("force", opts.options or {}, {
-        disabled_filetypes = {
-          statusline = {},
-          winbar = { "neo-tree" },
-        },
-      })
-
-      opts.winbar = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = {
-          {
-            "filename",
-            path = 1,
-
-            file_status = true, -- Displays file status (readonly status, modified status)
-            newfile_status = false, -- Display new file status (new file means no write after created)
-
-            shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-            -- for other components. (terrible name, any suggestions?)
-            symbols = {
-              modified = "", -- Text to show when the file is modified.
-              readonly = "", -- Text to show when the file is non-modifiable or readonly.
-              unnamed = "", -- Text to show for unnamed buffers.
-              newfile = "", -- Text to show for newly created file before first write
-              directory = "",
-              oil = "",
-            },
-
-            filetype_names = {
-              TelescopePrompt = "Telescope ",
-              dashboard = "Dashboard",
-              packer = "Packer",
-              fzf = "FZF",
-              alpha = "Dashboard",
-              oil = "",
-            },
-          },
-        },
-        lualine_x = { "encoding", "fileformat", "filetype" },
-        lualine_y = {
-          { "progress" },
-          {
-            "searchcount",
-            maxcount = 999,
-            timeout = 500,
-          },
-        },
-        lualine_z = { "location" },
-      }
-
-      opts.inactive_winbar = {
-        lualine_c = opts.winbar.lualine_c,
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      }
-
-      opts.sections = {}
-      opts.inactive_sections = {}
-      opts.extentensions = { "fugitive", "nvim-tree", "quickfix", "toggleterm", "packer", "oil" }
-
-      return opts
-    end,
-  },
+  --
   {
     "noice.nvim",
     opts = function(_, opts)
