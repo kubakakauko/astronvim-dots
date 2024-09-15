@@ -86,6 +86,22 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.tailwindcss" },
 
+  -- Pyphon and Jupyter Notebooks
+  { import = "astrocommunity.pack.python" },
+  {
+    import = "astrocommunity.media.image-nvim",
+    opts = {
+      backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+      integrations = {}, -- do whatever you want with image.nvim's integrations
+      max_width = 100, -- tweak to preference
+      max_height = 12, -- ^
+      max_height_window_percentage = math.huge, -- this is necessary for a good experience
+      max_width_window_percentage = math.huge,
+      window_overlap_clear_enabled = true,
+      window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+    },
+  },
+  --
   -- lsp
   { import = "astrocommunity.lsp.delimited-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },

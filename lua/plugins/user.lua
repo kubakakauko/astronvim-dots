@@ -42,16 +42,16 @@ return {
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = true },
 
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  {
-    "L3MON4D3/LuaSnip",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
-    end,
-  },
+  -- -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   config = function(plugin, opts)
+  --     require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+  --     -- add more custom luasnip configuration such as filetype extend or custom snippets
+  --     local luasnip = require "luasnip"
+  --     luasnip.filetype_extend("javascript", { "javascriptreact" })
+  --   end,
+  -- },
 
   {
     "windwp/nvim-autopairs",
@@ -156,7 +156,38 @@ return {
       },
     },
   },
+  {
+    "bluz71/vim-moonfly-colors",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.syntax "enable"
+      -- vim.cmd.colorscheme "moonfly"
 
+      vim.api.nvim_set_hl(0, "MoltenOutputBorder", { link = "Normal" })
+      vim.api.nvim_set_hl(0, "MoltenOutputBorderFail", { link = "MoonflyCrimson" })
+      vim.api.nvim_set_hl(0, "MoltenOutputBorderSuccess", { link = "MoonflyBlue" })
+    end,
+  },
+  {
+    "benlubas/molten-nvim",
+    dependencies = { "3rd/image.nvim" },
+    build = ":UpdateRemotePlugins",
+    init = function()
+      vim.g.molten_image_provider = "image.nvim"
+      vim.g.molten_use_border_highlights = true
+      -- add a few new things
+
+      -- don't change the mappings (unless it's related to your bug)
+      vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>")
+      vim.keymap.set("n", "<localleader>e", ":MoltenEvaluateOperator<CR>")
+      vim.keymap.set("n", "<localleader>rr", ":MoltenReevaluateCell<CR>")
+      vim.keymap.set("v", "<localleader>r", ":<C-u>MoltenEvaluateVisual<CR>gv")
+      vim.keymap.set("n", "<localleader>os", ":noautocmd MoltenEnterOutput<CR>")
+      vim.keymap.set("n", "<localleader>oh", ":MoltenHideOutput<CR>")
+      vim.keymap.set("n", "<localleader>md", ":MoltenDelete<CR>")
+    end,
+  },
   {
     "catppuccin",
     optional = true,

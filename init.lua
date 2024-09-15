@@ -15,7 +15,11 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+-- Part of jupyter python configuration
+vim.g.python3_host_prog = vim.fn.expand "~/.virtualenvs/neovim/bin/python3"
+
 require "lazy_setup"
 require "polish"
 require "custom.mappings"
+require "plugins.jupyter"
 require "custom.neovide"

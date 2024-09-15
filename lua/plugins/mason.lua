@@ -39,7 +39,7 @@ return {
         "dictionary",
         "write_good",
         -- "rustywind",
-        "pylint",
+        -- "pylint",
         "black",
         -- "prettierd",
         "jsonlint",
