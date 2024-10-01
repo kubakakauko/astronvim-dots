@@ -27,6 +27,9 @@ return {
   -- file explorer
   { import = "astrocommunity.file-explorer.oil-nvim" },
 
+  -- game
+  { import = "astrocommunity.game.leetcode-nvim" },
+
   -- colorscheme
   { import = "astrocommunity.colorscheme.tokyodark-nvim" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
