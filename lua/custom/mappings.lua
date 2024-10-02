@@ -36,14 +36,14 @@ vim.api.nvim_set_keymap("n", "<Leader>?", ":WhichKey<CR>", { noremap = true, sil
 vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>", { noremap = true, silent = true, desc = "Jump back" })
 vim.api.nvim_set_keymap("n", "<C-;>", "<C-i>", { noremap = true, silent = true, desc = "Jump forward" })
 
--- Automatically launch the correct kernel
-vim.keymap.set("n", "<leader>ip", function()
-  local venv = os.getenv "VIRTUAL_ENV"
-  if venv ~= nil then
-    -- in the form of /home/benlubas/.virtualenvs/VENV_NAME
-    venv = string.match(venv, "/.+/(.+)")
-    vim.cmd(("MoltenInit %s"):format(venv))
-  else
-    vim.cmd "MoltenInit python3"
-  end
-end, { desc = "Initialize Molten for python3", silent = false })
+-- -- Automatically launch the correct kernel
+-- vim.keymap.set("n", "<leader>ip", function()
+--   local venv = os.getenv "VIRTUAL_ENV"
+--   if venv ~= nil then
+--     -- in the form of /home/benlubas/.virtualenvs/VENV_NAME
+--     venv = string.match(venv, "/.+/(.+)")
+--     vim.cmd(("MoltenInit %s"):format(venv))
+--   else
+--     vim.cmd "MoltenInit python3"
+--   end
+-- end, { desc = "Initialize Molten for python3", silent = false })

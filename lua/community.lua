@@ -11,11 +11,19 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.scrolling.satellite-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
-  { import = "astrocommunity.split-and-window.windows-nvim" },
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
 
-  -- utility
+  -- split and windows
+  { import = "astrocommunity.split-and-window.windows-nvim" },
+  { import = "astrocommunity.split-and-window.edgy-nvim" },
 
+  -- keybindings
+  { import = "astrocommunity.keybinding.hydra-nvim" },
+
+  -- compiler
+  { import = "astrocommunity.code-runner.compiler-nvim" },
+  { import = "astrocommunity.code-runner.molten-nvim" },
+  -- utility
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.hover-nvim" },
 
