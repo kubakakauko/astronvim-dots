@@ -7,6 +7,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
   -- import/override with your plugins folder
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.scrolling.satellite-nvim" },
@@ -23,14 +24,20 @@ return {
   -- compiler
   { import = "astrocommunity.code-runner.compiler-nvim" },
   { import = "astrocommunity.code-runner.molten-nvim" },
+
   -- utility
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.hover-nvim" },
 
   -- workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
-
   -- { import = "astrocommunity.workflow.precognition-nvim" },
+  --
+  -- dap
+  { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
+
+  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  { import = "astrocommunity.debugging.telescope-dap-nvim" },
 
   -- file explorer
   { import = "astrocommunity.file-explorer.oil-nvim" },
@@ -105,19 +112,23 @@ return {
 
   -- Pyphon and Jupyter Notebooks
   { import = "astrocommunity.pack.python" },
-  {
-    import = "astrocommunity.media.image-nvim",
-    opts = {
-      backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
-      integrations = {}, -- do whatever you want with image.nvim's integrations
-      max_width = 100, -- tweak to preference
-      max_height = 12, -- ^
-      max_height_window_percentage = math.huge, -- this is necessary for a good experience
-      max_width_window_percentage = math.huge,
-      window_overlap_clear_enabled = true,
-      window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-    },
-  },
+  -- {
+  --   import = "astrocommunity.media.image-nvim",
+  --   opts = {
+  --     backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+  --     integrations = {}, -- do whatever you want with image.nvim's integrations
+  --     max_width = 100, -- tweak to preference
+  --     max_height = 12, -- ^
+  --     max_height_window_percentage = math.huge, -- this is necessary for a good experience
+  --     max_width_window_percentage = math.huge,
+  --     window_overlap_clear_enabled = true,
+  --     window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+  --   },
+  -- },
+
+  -- media
+  { import = "astrocommunity.media.image-nvim" },
+
   --
   -- lsp
   { import = "astrocommunity.lsp.delimited-nvim" },
