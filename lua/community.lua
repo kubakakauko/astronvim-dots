@@ -13,6 +13,7 @@ return {
   { import = "astrocommunity.scrolling.satellite-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
+  { import = "astrocommunity.icon.mini-icons" },
 
   -- split and windows
   { import = "astrocommunity.split-and-window.windows-nvim" },
@@ -104,6 +105,13 @@ return {
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
+  { import = "astrocommunity.editing-support.comment-box-nvim" },
+  { import = "astrocommunity.editing-support.vim-visual-multi" },
+
+  -- indent
+
+  { import = "astrocommunity.indent.indent-tools-nvim" },
+  { import = "astrocommunity.indent.mini-indentscope" },
 
   -- pack
   { import = "astrocommunity.pack.lua" },
@@ -111,20 +119,22 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
 
   -- Pyphon and Jupyter Notebooks
-  { import = "astrocommunity.pack.python" },
-  -- {
-  --   import = "astrocommunity.media.image-nvim",
-  --   opts = {
-  --     backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
-  --     integrations = {}, -- do whatever you want with image.nvim's integrations
-  --     max_width = 100, -- tweak to preference
-  --     max_height = 12, -- ^
-  --     max_height_window_percentage = math.huge, -- this is necessary for a good experience
-  --     max_width_window_percentage = math.huge,
-  --     window_overlap_clear_enabled = true,
-  --     window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-  --   },
-  -- },
+  {
+    import = "astrocommunity.pack.python",
+    opts = function(_, opts)
+      -- Extend Pyright setup to detect Conda environment automatically
+      opts.lsp = opts.lsp or {}
+      opts.lsp.before_init = function(_, config)
+        local conda_prefix = os.getenv "CONDA_PREFIX"
+        if conda_prefix and conda_prefix ~= "" then
+          config.settings.python.pythonPath = conda_prefix .. "/bin/python"
+        else
+          config.settings.python.pythonPath = vim.fn.exepath "python3" or vim.fn.exepath "python" or "python"
+        end
+      end
+      return opts
+    end,
+  },
 
   -- media
   { import = "astrocommunity.media.image-nvim" },
@@ -134,6 +144,9 @@ return {
   { import = "astrocommunity.lsp.delimited-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
+  -- new adds
+  { import = "astrocommunity.lsp.lsp-lens-nvim" },
+  { import = "astrocommunity.lsp.garbage-day-nvim" },
 
   -- recipes
   { import = "astrocommunity.recipes.neovide" },
