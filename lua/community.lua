@@ -52,7 +52,7 @@ return {
   -- { import = "astrocommunity.colorscheme.aurora" },
   -- { import = "astrocommunity.colorscheme.nord-nvim" },
   -- { import = "astrocommunity.colorscheme.gruvbox-nvim" },
-  -- { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
   -- { import = "astrocommunity.colorscheme.bamboo-nvim" },
   -- { import = "astrocommunity.colorscheme.bluloco-nvim" },
   -- { import = "astrocommunity.colorscheme.catppuccin" },
