@@ -106,52 +106,52 @@ return {
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.comment-box-nvim" },
-
-  {
-    "brenton-leighton/multiple-cursors.nvim",
-    cmd = {
-      "MultipleCursorsAddDown",
-      "MultipleCursorsAddUp",
-      "MultipleCursorsMouseAddDelete",
-      "MultipleCursorsAddMatches",
-      "MultipleCursorsAddMatchesV",
-      "MultipleCursorsAddJumpNextMatch",
-      "MultipleCursorsJumpNextMatch",
-      "MultipleCursorsLock",
-    },
-    dependencies = {
-      "AstroNvim/astrocore",
-      opts = function(_, opts)
-        local maps = opts.mappings
-        -- Update keybindings to use Option/Alt instead of Control
-        for lhs, map in pairs {
-          ["<M-Down>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Add cursor down" },
-          ["<M-Up>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Add cursor up" },
-          ["<M-LeftMouse>"] = { "<Cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Add cursor with mouse" },
-        } do
-          maps.n[lhs] = map
-          maps.i[lhs] = map
-        end
-
-        -- Update leader-based keybindings for multiple cursors
-        local prefix = "<Leader>m"
-        for lhs, map in pairs {
-          [prefix .. "a"] = { "<Cmd>MultipleCursorsAddMatches<CR>", desc = "Add cursor matches" },
-          [prefix .. "A"] = {
-            "<Cmd>MultipleCursorsAddMatchesV<CR>",
-            desc = "Add cursor matches in previous visual area",
-          },
-          [prefix .. "j"] = { "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", desc = "Add cursor and jump to next match" },
-          [prefix .. "J"] = { "<Cmd>MultipleCursorsJumpNextMatch<CR>", desc = "Move cursor to next match" },
-          [prefix .. "l"] = { "<Cmd>MultipleCursorsLock<CR>", desc = "Lock virtual cursors" },
-        } do
-          maps.n[lhs] = map
-          maps.x[lhs] = map
-        end
-      end,
-    },
-    opts = {},
-  },
+  { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  -- {
+  --   "brenton-leighton/multiple-cursors.nvim",
+  --   cmd = {
+  --     "MultipleCursorsAddDown",
+  --     "MultipleCursorsAddUp",
+  --     "MultipleCursorsMouseAddDelete",
+  --     "MultipleCursorsAddMatches",
+  --     "MultipleCursorsAddMatchesV",
+  --     "MultipleCursorsAddJumpNextMatch",
+  --     "MultipleCursorsJumpNextMatch",
+  --     "MultipleCursorsLock",
+  --   },
+  --   dependencies = {
+  --     "AstroNvim/astrocore",
+  --     opts = function(_, opts)
+  --       local maps = opts.mappings
+  --       -- Update keybindings to use Option/Alt instead of Control
+  --       for lhs, map in pairs {
+  --         ["<M-Down>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Add cursor down" },
+  --         ["<M-Up>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Add cursor up" },
+  --         ["<M-LeftMouse>"] = { "<Cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Add cursor with mouse" },
+  --       } do
+  --         maps.n[lhs] = map
+  --         maps.i[lhs] = map
+  --       end
+  --
+  --       -- Update leader-based keybindings for multiple cursors
+  --       local prefix = "<Leader>m"
+  --       for lhs, map in pairs {
+  --         [prefix .. "a"] = { "<Cmd>MultipleCursorsAddMatches<CR>", desc = "Add cursor matches" },
+  --         [prefix .. "A"] = {
+  --           "<Cmd>MultipleCursorsAddMatchesV<CR>",
+  --           desc = "Add cursor matches in previous visual area",
+  --         },
+  --         [prefix .. "j"] = { "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", desc = "Add cursor and jump to next match" },
+  --         [prefix .. "J"] = { "<Cmd>MultipleCursorsJumpNextMatch<CR>", desc = "Move cursor to next match" },
+  --         [prefix .. "l"] = { "<Cmd>MultipleCursorsLock<CR>", desc = "Lock virtual cursors" },
+  --       } do
+  --         maps.n[lhs] = map
+  --         maps.x[lhs] = map
+  --       end
+  --     end,
+  --   },
+  --   opts = {},
+  -- },
 
   -- indent
 
@@ -203,76 +203,76 @@ return {
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
   -- { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
-  -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
 
-  {
-    "smoka7/hop.nvim",
-    opts = function()
-      require("hop").setup {
-        keys = "etovxqpdygfblzhckisuran", -- Colemak layout keys
-      }
-    end,
-    dependencies = {
-      "AstroNvim/astrocore",
-      opts = {
-        mappings = {
-          n = {
-            ["s"] = { function() require("hop").hint_char2() end, desc = "Hop to character 2" },
-            ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop to lines" },
-          },
-          v = {
-            ["s"] = { function() require("hop").hint_char2 { extend_visual = true } end, desc = "Hop to character 2" },
-            ["<S-s>"] = { function() require("hop").hint_lines { extend_visual = true } end, desc = "Hop to lines" },
-          },
-        },
-      },
-    },
-  },
-  {
-    "dial.nvim",
-    opts = {
-      mappings = {
-        v = {
-          ["<C-a>"] = {
-            function() return require("dial.map").manipulate("increment", "visual") end,
-            desc = "Increment",
-          },
-          ["<C-A>"] = {
-            function() return require("dial.map").manipulate("decrement", "visual") end,
-            desc = "Decrement",
-          },
-        },
-        x = {
-          ["g<C-a>"] = {
-            function() return require("dial.map").manipulate("increment", "gvisual") end,
-            desc = "Increment",
-          },
-          ["g<C-A>"] = {
-            function() return require("dial.map").manipulate("decrement", "gvisual") end,
-            desc = "Decrement",
-          },
-        },
-        n = {
-          ["<C-a>"] = {
-            function() return require("dial.map").manipulate("increment", "normal") end,
-            desc = "Increment",
-          },
-          ["<C-A>"] = {
-            function() return require("dial.map").manipulate("decrement", "normal") end,
-            desc = "Decrement",
-          },
-          ["g<C-a>"] = {
-            function() return require("dial.map").manipulate("increment", "gnormal") end,
-            desc = "Increment",
-          },
-          ["g<C-A>"] = {
-            function() return require("dial.map").manipulate("decrement", "gnormal") end,
-            desc = "Decrement",
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   "smoka7/hop.nvim",
+  --   opts = function()
+  --     require("hop").setup {
+  --       keys = "etovxqpdygfblzhckisuran", -- Colemak layout keys
+  --     }
+  --   end,
+  --   dependencies = {
+  --     "AstroNvim/astrocore",
+  --     opts = {
+  --       mappings = {
+  --         n = {
+  --           ["s"] = { function() require("hop").hint_char2() end, desc = "Hop to character 2" },
+  --           ["<S-s>"] = { function() require("hop").hint_lines() end, desc = "Hop to lines" },
+  --         },
+  --         v = {
+  --           ["s"] = { function() require("hop").hint_char2 { extend_visual = true } end, desc = "Hop to character 2" },
+  --           ["<S-s>"] = { function() require("hop").hint_lines { extend_visual = true } end, desc = "Hop to lines" },
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "dial.nvim",
+  --   opts = {
+  --     mappings = {
+  --       v = {
+  --         ["<C-a>"] = {
+  --           function() return require("dial.map").manipulate("increment", "visual") end,
+  --           desc = "Increment",
+  --         },
+  --         ["<C-A>"] = {
+  --           function() return require("dial.map").manipulate("decrement", "visual") end,
+  --           desc = "Decrement",
+  --         },
+  --       },
+  --       x = {
+  --         ["g<C-a>"] = {
+  --           function() return require("dial.map").manipulate("increment", "gvisual") end,
+  --           desc = "Increment",
+  --         },
+  --         ["g<C-A>"] = {
+  --           function() return require("dial.map").manipulate("decrement", "gvisual") end,
+  --           desc = "Decrement",
+  --         },
+  --       },
+  --       n = {
+  --         ["<C-a>"] = {
+  --           function() return require("dial.map").manipulate("increment", "normal") end,
+  --           desc = "Increment",
+  --         },
+  --         ["<C-A>"] = {
+  --           function() return require("dial.map").manipulate("decrement", "normal") end,
+  --           desc = "Decrement",
+  --         },
+  --         ["g<C-a>"] = {
+  --           function() return require("dial.map").manipulate("increment", "gnormal") end,
+  --           desc = "Increment",
+  --         },
+  --         ["g<C-A>"] = {
+  --           function() return require("dial.map").manipulate("decrement", "gnormal") end,
+  --           desc = "Decrement",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
   -- {
   --   "precognition.nvim",
@@ -362,28 +362,28 @@ return {
   --   end,
   -- },
   --
-  {
-    "noice.nvim",
-    opts = function(_, opts)
-      opts.presets.bottom_search = false
-      opts.lsp.signature = { enabled = false }
-      return opts
-    end,
-  },
-
-  {
-    "echasnovski/mini.move",
-    opts = {
-      mappings = {
-        left = "<M-S-h>",
-        right = "<M-S-i>",
-        down = "<M-S-n>",
-        up = "<M-S-e>",
-        line_left = "<M-S-h>",
-        line_right = "<M-S-i>",
-        line_up = "<M-S-e>",
-        line_down = "<M-S-n>",
-      },
-    },
-  },
+  -- {
+  --   "noice.nvim",
+  --   opts = function(_, opts)
+  --     opts.presets.bottom_search = false
+  --     opts.lsp.signature = { enabled = false }
+  --     return opts
+  --   end,
+  -- },
+  --
+  -- {
+  --   "echasnovski/mini.move",
+  --   opts = {
+  --     mappings = {
+  --       left = "<M-S-h>",
+  --       right = "<M-S-i>",
+  --       down = "<M-S-n>",
+  --       up = "<M-S-e>",
+  --       line_left = "<M-S-h>",
+  --       line_right = "<M-S-i>",
+  --       line_up = "<M-S-e>",
+  --       line_down = "<M-S-n>",
+  --     },
+  --   },
+  -- },
 }
