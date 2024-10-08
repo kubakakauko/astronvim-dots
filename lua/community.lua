@@ -133,7 +133,7 @@ return {
     end,
   },
 
-  { import = "astrocommunity.pack.nvchad-ui" },
+  -- { import = "astrocommunity.pack.nvchad-ui" },
 
   --fuzzy-finder
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
