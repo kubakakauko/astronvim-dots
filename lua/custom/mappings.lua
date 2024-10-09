@@ -36,6 +36,12 @@ vim.api.nvim_set_keymap("n", "<Leader>?", ":WhichKey<CR>", { noremap = true, sil
 vim.api.nvim_set_keymap("n", "<C-o>", "<C-o>", { noremap = true, silent = true, desc = "Jump back" })
 vim.api.nvim_set_keymap("n", "<C-;>", "<C-i>", { noremap = true, silent = true, desc = "Jump forward" })
 
+-- Export diagnostics to quickfix list for easy copy
+vim.api.nvim_create_user_command("ExportDiagnosticsToQuickfix", function()
+  vim.diagnostic.setqflist()
+  vim.cmd "copen" -- Open the quickfix window
+end, {})
+
 -- -- Automatically launch the correct kernel
 -- vim.keymap.set("n", "<leader>ip", function()
 --   local venv = os.getenv "VIRTUAL_ENV"
