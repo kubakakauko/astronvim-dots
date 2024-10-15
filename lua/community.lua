@@ -7,9 +7,13 @@ return {
   "AstroNvim/astrocommunity",
 
   -- import/override with your plugins folder
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.scrolling.satellite-nvim" },
   { import = "astrocommunity.icon.mini-icons" },
+
+  -- completion
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.completion.cmp-under-comparator" },
+  { import = "astrocommunity.completion.magazine-nvim" },
 
   -- split and windows
   { import = "astrocommunity.split-and-window.windows-nvim" },
