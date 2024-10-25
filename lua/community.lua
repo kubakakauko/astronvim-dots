@@ -45,12 +45,13 @@ return {
   { import = "astrocommunity.file-explorer.oil-nvim" },
 
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+
   -- game
   { import = "astrocommunity.game.leetcode-nvim" },
 
   -- colorscheme
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.colorscheme" },
+  { import = "astrocommunity.colorscheme", lazy = false },
   -- { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   -- { import = "astrocommunity.colorscheme.tokyodark-nvim" },
   -- { import = "astrocommunity.colorscheme.aurora" },
@@ -138,6 +139,7 @@ return {
     end,
   },
 
+  -- nv chad ui
   -- { import = "astrocommunity.pack.nvchad-ui" },
 
   --fuzzy-finder
@@ -163,11 +165,12 @@ return {
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.cache-colorscheme" },
   { import = "astrocommunity.recipes.neo-tree-dark" },
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+
+  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
 
   -- bars and lines
-  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   -- { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
   -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
