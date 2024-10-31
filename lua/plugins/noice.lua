@@ -5,7 +5,7 @@ return {
   opts = function(_, opts)
     opts.presets.bottom_search = false
     opts.lsp = {
-      signature = { enabled = false }, -- Disable signature help if you prefer
+      signature = { enabled = true }, -- Disable signature help if you prefer
       progress = { enabled = false }, -- Disable LSP progress notifications
       message = { enabled = true }, -- Enable general LSP messages to be handled by Noice
       override = {

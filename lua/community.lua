@@ -34,7 +34,7 @@ return {
 
   -- workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
-  { import = "astrocommunity.workflow.precognition-nvim" },
+  -- { import = "astrocommunity.workflow.precognition-nvim" },
 
   -- dap
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },

@@ -3,7 +3,7 @@ return {
   ---@type AstroLSPOpts
   opts = {
     features = {
-      inlay_hints = true, -- enable inlay hints globally on startup
+      inlay_hints = false, -- enable inlay hints globally on startup
     },
   },
 }
