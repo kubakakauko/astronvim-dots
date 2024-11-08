@@ -34,6 +34,7 @@ return {
   { import = "astrocommunity.utility.hover-nvim" },
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
   { import = "astrocommunity.utility.telescope-lazy-nvim" },
+  { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
 
   -- workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
@@ -72,7 +73,7 @@ return {
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
   { import = "astrocommunity.editing-support.comment-box-nvim" },
   { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
-  { import = "astrocommunity.editing-support.yanky-nvim" },
+  -- { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
 
   -- indent
@@ -111,6 +112,7 @@ return {
 
   --fuzzy-finder
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  { import = "astrocommunity.fuzzy-finder.fzf-lua" },
 
   -- media
   { import = "astrocommunity.media.image-nvim" },
