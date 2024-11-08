@@ -15,6 +15,9 @@ return {
   { import = "astrocommunity.completion.cmp-under-comparator" },
   { import = "astrocommunity.completion.magazine-nvim" },
 
+  -- quickfix
+  { import = "astrocommunity.quickfix.nvim-bqf" },
+
   -- split and windows
   { import = "astrocommunity.split-and-window.windows-nvim" },
   { import = "astrocommunity.split-and-window.edgy-nvim" },
@@ -52,49 +55,6 @@ return {
   -- colorscheme
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme", lazy = false },
-  -- { import = "astrocommunity.colorscheme.tokyonight-nvim" },
-  -- { import = "astrocommunity.colorscheme.tokyodark-nvim" },
-  -- { import = "astrocommunity.colorscheme.aurora" },
-  -- { import = "astrocommunity.colorscheme.nord-nvim" },
-  -- { import = "astrocommunity.colorscheme.gruvbox-nvim" },
-  -- { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
-  -- { import = "astrocommunity.colorscheme.bamboo-nvim" },
-  -- { import = "astrocommunity.colorscheme.bluloco-nvim" },
-  -- { import = "astrocommunity.colorscheme.catppuccin" },
-  -- { import = "astrocommunity.colorscheme.citruszest-nvim" },
-  -- { import = "astrocommunity.colorscheme.cyberdream-nvim" },
-  -- { import = "astrocommunity.colorscheme.dracula-nvim" },
-  -- { import = "astrocommunity.colorscheme.eldritch-nvim" },
-  -- { import = "astrocommunity.colorscheme.everforest" },
-  -- { import = "astrocommunity.colorscheme.fluoromachine-nvim" },
-  -- { import = "astrocommunity.colorscheme.github-nvim-theme" },
-  -- { import = "astrocommunity.colorscheme.gruvbox-baby" },
-  -- { import = "astrocommunity.colorscheme.helix-nvim" },
-  -- { import = "astrocommunity.colorscheme.hybrid-nvim" },
-  -- { import = "astrocommunity.colorscheme.iceberg-vim" },
-  -- { import = "astrocommunity.colorscheme.kanagawa-nvim" },
-  -- { import = "astrocommunity.colorscheme.kanagawa-paper-nvim" },
-  -- { import = "astrocommunity.colorscheme.lackluster-nvim" },
-  -- { import = "astrocommunity.colorscheme.melange-nvim" },
-  -- { import = "astrocommunity.colorscheme.mellifluous-nvim" },
-  -- { import = "astrocommunity.colorscheme.mellow-nvim" },
-  -- { import = "astrocommunity.colorscheme.miasma-nvim" },
-  -- { import = "astrocommunity.colorscheme.mini-base16" },
-  -- { import = "astrocommunity.colorscheme.modus-nvim" },
-  -- { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
-  -- { import = "astrocommunity.colorscheme.neofusion-nvim" },
-  -- { import = "astrocommunity.colorscheme.neosolarized-nvim" },
-  -- { import = "astrocommunity.colorscheme.night-owl-nvim" },
-  -- { import = "astrocommunity.colorscheme.nightfox-nvim" },
-  -- { import = "astrocommunity.colorscheme.nordic-nvim" },
-  -- { import = "astrocommunity.colorscheme.nvim-juliana" },
-  -- { import = "astrocommunity.colorscheme.oldworld-nvim" },
-  -- { import = "astrocommunity.colorscheme.oxocarbon-nvim" },
-  -- { import = "astrocommunity.colorscheme.poimandres-nvim" },
-  -- { import = "astrocommunity.colorscheme.rose-pine" },
-  -- { import = "astrocommunity.colorscheme.solarized-osaka-nvim" },
-  -- { import = "astrocommunity.colorscheme.sonokai" },
-  -- { import = "astrocommunity.colorscheme.vim-dogrun" },
 
   -- motion
   { import = "astrocommunity.motion.harpoon" },
@@ -113,15 +73,22 @@ return {
   { import = "astrocommunity.editing-support.comment-box-nvim" },
   { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
+  { import = "astrocommunity.editing-support.bigfile-nvim" },
 
   -- indent
   { import = "astrocommunity.indent.indent-tools-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
 
+  -- diagnostics
+  { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
+
   -- pack
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.svelte" },
+  { import = "astrocommunity.pack.json" },
   {
     import = "astrocommunity.pack.python",
     opts = function(_, opts)
