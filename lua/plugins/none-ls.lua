@@ -36,6 +36,7 @@ return {
           "handlebars",
           "svelte",
           "astro",
+          "navy",
         },
         -- prefer_local = "node_modules/.bin",
       },
