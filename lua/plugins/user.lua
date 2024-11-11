@@ -51,10 +51,10 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
-  -- {
-  --   "fdschmidt93/telescope-egrepify.nvim",
-  --   dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  -- },
+  {
+    "fdschmidt93/telescope-egrepify.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  },
 
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = true },
