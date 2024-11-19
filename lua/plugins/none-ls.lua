@@ -1,6 +1,6 @@
 -- none-ls.lua
 
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize None-ls sources
 
@@ -34,7 +34,7 @@ return {
           "markdown.mdx",
           "graphql",
           "handlebars",
-          "svelte",
+          -- "svelte",
           "astro",
           "navy",
         },

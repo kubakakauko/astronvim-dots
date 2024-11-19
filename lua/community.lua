@@ -6,21 +6,23 @@
 return {
   "AstroNvim/astrocommunity",
 
+  -- { import = "astrocommunity/lsp/coc-nvim" },
   -- import/override with your plugins folder
   { import = "astrocommunity.scrolling.satellite-nvim" },
-  { import = "astrocommunity.icon.mini-icons" },
+  -- { import = "astrocommunity.icon.mini-icons" },
 
   -- completion
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.completion.cmp-under-comparator" },
-  { import = "astrocommunity.completion.magazine-nvim" },
+  -- { import = "astrocommunity.completion.cmp-under-comparator" },
+  { import = "astrocommunity.completion.magazine-nvim" }, --Magazine.nvim is a "beta" nvim-cmp to fix bugs & implement new features early
 
   -- quickfix
-  { import = "astrocommunity.quickfix.nvim-bqf" },
+  -- { import = "astrocommunity.quickfix.nvim-bqf" },
+  { import = "astrocommunity.quickfix.quicker-nvim" },
 
   -- split and windows
-  { import = "astrocommunity.split-and-window.windows-nvim" },
-  { import = "astrocommunity.split-and-window.edgy-nvim" },
+  -- { import = "astrocommunity.split-and-window.windows-nvim" },
+  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
 
   -- keybindings
   { import = "astrocommunity.keybinding.hydra-nvim" },
@@ -30,11 +32,14 @@ return {
   { import = "astrocommunity.code-runner.molten-nvim" },
 
   -- utility
-  { import = "astrocommunity.utility.noice-nvim" },
+  -- { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.hover-nvim" },
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
   { import = "astrocommunity.utility.telescope-lazy-nvim" },
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
+
+  --this may be fucky
+  { import = "astrocommunity/utility/mason-tool-installer-nvim" },
 
   -- workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
@@ -46,7 +51,7 @@ return {
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
 
   -- file explorer
-  { import = "astrocommunity.file-explorer.oil-nvim" },
+  -- { import = "astrocommunity.file-explorer.oil-nvim" },
 
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
 
@@ -60,36 +65,38 @@ return {
   -- motion
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.hop-nvim" },
-  { import = "astrocommunity.motion.mini-move" },
+  -- { import = "astrocommunity.motion.mini-move" }, --moving lines but its not colemak suitable
   { import = "astrocommunity.motion.nvim-surround" },
 
   -- project
   { import = "astrocommunity.search.nvim-spectre" },
 
   -- editing
-  { import = "astrocommunity.editing-support.dial-nvim" },
+  -- { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
-  { import = "astrocommunity.editing-support.comment-box-nvim" },
-  { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  -- { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
+  { import = "astrocommunity.editing-support.auto-save-nvim" },
 
   -- indent
-  { import = "astrocommunity.indent.indent-tools-nvim" },
-  { import = "astrocommunity.indent.mini-indentscope" },
+  -- { import = "astrocommunity.indent.indent-tools-nvim" }, -- this is OP but i think we dont have the bindings done correctly in the default install
+  -- { import = "astrocommunity.indent.mini-indentscope" },
 
   -- diagnostics
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
 
   -- pack
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.tailwindcss" },
+  -- { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.json" },
+
   {
     import = "astrocommunity.pack.python",
     opts = function(_, opts)
@@ -107,8 +114,9 @@ return {
     end,
   },
 
+  --
   -- nv chad ui
-  -- { import = "astrocommunity.pack.nvchad-ui" },
+  { import = "astrocommunity.pack.nvchad-ui" },
 
   --fuzzy-finder
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
@@ -118,10 +126,10 @@ return {
   { import = "astrocommunity.media.image-nvim" },
 
   -- lsp
-  { import = "astrocommunity.lsp.delimited-nvim" },
-  { import = "astrocommunity.lsp.lsp-signature-nvim" },
-  { import = "astrocommunity.lsp.actions-preview-nvim" },
-  { import = "astrocommunity.lsp.lsp-lens-nvim" },
+  { import = "astrocommunity.lsp.delimited-nvim" }, -- helps to move to next / pred ]D etc
+  -- { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  -- { import = "astrocommunity.lsp.actions-preview-nvim" },
+  -- { import = "astrocommunity.lsp.lsp-lens-nvim"  }, -- display number of references etc
   { import = "astrocommunity.lsp.garbage-day-nvim" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.lsp.lspsaga-nvim" },
@@ -133,12 +141,13 @@ return {
   -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.cache-colorscheme" },
-  { import = "astrocommunity.recipes.neo-tree-dark" },
+  -- { import = "astrocommunity.recipes.neo-tree-dark" },
 
-  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
 
   -- bars and lines
+  { import = "astrocommunity/bars-and-lines/dropbar-nvim" },
   -- { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   -- { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
