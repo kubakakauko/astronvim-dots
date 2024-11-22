@@ -16,6 +16,8 @@ return {
   -- { import = "astrocommunity.completion.cmp-under-comparator" },
   { import = "astrocommunity.completion.magazine-nvim" }, --Magazine.nvim is a "beta" nvim-cmp to fix bugs & implement new features early
 
+  -- git
+  { import = "astrocommunity.git.fugit2-nvim" },
   -- quickfix
   -- { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.quickfix.quicker-nvim" },
