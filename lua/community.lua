@@ -145,7 +145,7 @@ return {
   { import = "astrocommunity.recipes.cache-colorscheme" },
   -- { import = "astrocommunity.recipes.neo-tree-dark" },
 
-  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
 
   -- bars and lines
