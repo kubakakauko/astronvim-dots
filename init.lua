@@ -15,6 +15,11 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+-- loat the daskboard
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function() vim.cmd "Nvdash" end,
+  desc = "Open NvDash on startup",
+})
 -- Part of jupyter python configuration
 vim.g.python3_host_prog = vim.fn.expand "~/.virtualenvs/neovim/bin/python3"
 
