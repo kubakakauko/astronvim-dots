@@ -36,16 +36,15 @@ map("n", "<Leader>?", ":WhichKey<CR>", { noremap = true, silent = true })
 
 -- Remap jump forward and backward to avoid conflict with Colemak
 map("n", "<C-o>", "<C-o>", { noremap = true, silent = true, desc = "Jump back" })
-map("n", "<C-;>", "<C-i>", { noremap = true, silent = true, desc = "Jump forward" })
+vim.api.nvim_set_keymap("n", "<C-;>", "<C-i>", { noremap = true, silent = true, desc = "Jump forward" })
+
+
 
 -- Export diagnostics to quickfix list for easy copy
 vim.api.nvim_create_user_command("ExportDiagnosticsToQuickfix", function()
   vim.diagnostic.setqflist()
   vim.cmd "copen" -- Open the quickfix window
 end, {})
-
--- Binding for Telescope egrefipy
-map("n", "<leader>F", ":Telescope egrepify<CR>", { noremap = true, silent = true })
 
 -- -- Automatically launch the correct kernel
 -- vim.keymap.set("n", "<leader>ip", function()
