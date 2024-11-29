@@ -7,7 +7,6 @@
 -- Set up custom filetypes
 vim.filetype.add {
   extension = {
-    foo = "fooscript",
     navy = "javascript",
   },
   filename = {
