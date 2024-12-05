@@ -15,11 +15,14 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
--- loat the daskboard
+-- Load the dashboard only when no files are opened
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function() vim.cmd "Nvdash" end,
-  desc = "Open NvDash on startup",
+  callback = function()
+    if vim.fn.argc() == 0 then vim.cmd "Nvdash" end
+  end,
+  desc = "Open NvDash on startup when no files are opened",
 })
+
 -- Part of jupyter python configuration
 vim.g.python3_host_prog = vim.fn.expand "~/.virtualenvs/neovim/bin/python3"
 

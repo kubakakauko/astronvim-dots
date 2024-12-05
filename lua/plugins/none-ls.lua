@@ -34,7 +34,7 @@ return {
           "markdown.mdx",
           "graphql",
           "handlebars",
-          -- "svelte",
+          "svelte",
           "astro",
           "navy",
         },

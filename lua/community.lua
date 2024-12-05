@@ -11,6 +11,8 @@ return {
   { import = "astrocommunity.scrolling.satellite-nvim" },
   -- { import = "astrocommunity.icon.mini-icons" },
 
+  -- note taning
+  { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- completion
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   -- { import = "astrocommunity.completion.cmp-under-comparator" },
@@ -39,6 +41,7 @@ return {
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
   { import = "astrocommunity.utility.telescope-lazy-nvim" },
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
+  { import = "astrocommunity.utility.nvim-toggler" },
 
   --this may be fucky
   { import = "astrocommunity/utility/mason-tool-installer-nvim" },
