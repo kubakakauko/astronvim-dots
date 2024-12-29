@@ -3,8 +3,25 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
----@type LazySpec
+-- -@type LazySpec
 return {
+  -- Tokyo Night Color Scheme
+  {
+    "folke/tokyonight.nvim",
+    lazy = false, -- Ensure it's loaded immediately
+    config = function()
+      require("tokyonight").setup {
+        style = "night", -- Options: "storm", "night", "day"
+      }
+    end,
+  },
+
+  -- Ayu Color Scheme
+  {
+    "Shatur/neovim-ayu",
+    lazy = false, -- Ensure it's loaded immediately
+    config = function() require("ayu").setup {} end,
+  },
 
   -- == Examples of Adding Plugins ==
 

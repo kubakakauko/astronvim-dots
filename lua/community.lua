@@ -12,11 +12,14 @@ return {
   -- { import = "astrocommunity.icon.mini-icons" },
 
   -- note taning
-  { import = "astrocommunity.note-taking.obsidian-nvim" },
+  -- { import = "astrocommunity.note-taking.obsidian-nvim" },
   -- completion
   { import = "astrocommunity.completion.copilot-lua-cmp" },
-  -- { import = "astrocommunity.completion.cmp-under-comparator" },
+  { import = "astrocommunity.completion.cmp-under-comparator" },
   { import = "astrocommunity.completion.magazine-nvim" }, --Magazine.nvim is a "beta" nvim-cmp to fix bugs & implement new features early
+  { import = "astrocommunity/completion/blink-cmp" },
+  
+
 
   -- git
   { import = "astrocommunity.git.fugit2-nvim" },
@@ -57,6 +60,9 @@ return {
 
   -- file explorer
   -- { import = "astrocommunity.file-explorer.oil-nvim" },
+  --
+  -- markdown and latex
+  { import = "astrocommunity/markdown-and-latex/render-markdown-nvim" },
 
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
 
@@ -65,7 +71,7 @@ return {
 
   -- colorscheme
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.colorscheme", lazy = false },
+  { import = "astrocommunity.colorscheme", lazy = true },
 
   -- motion
   { import = "astrocommunity.motion.harpoon" },
@@ -101,6 +107,8 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.json" },
+
+  { import = "astrocommunity.pack.python-ruff" },
 
   {
     import = "astrocommunity.pack.python",
