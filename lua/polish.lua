@@ -8,6 +8,7 @@
 vim.filetype.add {
   extension = {
     navy = "javascript",
+    wasp = "typescript",
   },
   filename = {
     ["Foofile"] = "fooscript",

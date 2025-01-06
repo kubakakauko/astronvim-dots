@@ -17,9 +17,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.completion.cmp-under-comparator" },
   { import = "astrocommunity.completion.magazine-nvim" }, --Magazine.nvim is a "beta" nvim-cmp to fix bugs & implement new features early
-  { import = "astrocommunity/completion/blink-cmp" },
-  
-
+  -- { import = "astrocommunity/completion/blink-cmp" },
 
   -- git
   { import = "astrocommunity.git.fugit2-nvim" },
@@ -71,7 +69,7 @@ return {
 
   -- colorscheme
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.colorscheme", lazy = true },
+  { import = "astrocommunity.colorscheme", lazy = false },
 
   -- motion
   { import = "astrocommunity.motion.harpoon" },
@@ -129,7 +127,7 @@ return {
 
   --
   -- nv chad ui
-  { import = "astrocommunity.pack.nvchad-ui" },
+  -- { import = "astrocommunity.pack.nvchad-ui" },
 
   --fuzzy-finder
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
@@ -152,7 +150,7 @@ return {
   { import = "astrocommunity.recipes.neovide" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
-  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
+  -- { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.cache-colorscheme" },
   -- { import = "astrocommunity.recipes.neo-tree-dark" },
 
