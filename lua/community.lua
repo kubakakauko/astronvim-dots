@@ -6,13 +6,12 @@
 return {
   "AstroNvim/astrocommunity",
 
-  -- { import = "astrocommunity/lsp/coc-nvim" },
   -- import/override with your plugins folder
   { import = "astrocommunity.scrolling.satellite-nvim" },
-  -- { import = "astrocommunity.icon.mini-icons" },
 
-  -- note taning
-  -- { import = "astrocommunity.note-taking.obsidian-nvim" },
+  -- icons
+  { import = "astrocommunity.icon.mini-icons" }, -- checkhealth told me install this
+
   -- completion
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.completion.cmp-under-comparator" },
@@ -21,6 +20,7 @@ return {
 
   -- git
   { import = "astrocommunity.git.fugit2-nvim" },
+
   -- quickfix
   -- { import = "astrocommunity.quickfix.nvim-bqf" },
   { import = "astrocommunity.quickfix.quicker-nvim" },
@@ -31,6 +31,14 @@ return {
 
   -- keybindings
   { import = "astrocommunity.keybinding.hydra-nvim" },
+  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
+
+  -- strartup
+  { import = "astrocommunity.startup.fsplash-nvim" },
+
+  -- terminal integration
+  { import = "astrocommunity.terminal-integration.flatten-nvim" }, -- open files from terminal in current nvim instance
+  { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" }, -- telescope visualization of terminals
 
   -- compiler
   { import = "astrocommunity.code-runner.compiler-nvim" },
@@ -58,11 +66,10 @@ return {
 
   -- file explorer
   -- { import = "astrocommunity.file-explorer.oil-nvim" },
-  --
+  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+
   -- markdown and latex
   { import = "astrocommunity/markdown-and-latex/render-markdown-nvim" },
-
-  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
 
   -- game
   { import = "astrocommunity.game.leetcode-nvim" },
@@ -80,7 +87,7 @@ return {
   -- project
   { import = "astrocommunity.search.nvim-spectre" },
 
-  -- editing
+  -- editing support 
   -- { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
@@ -89,6 +96,12 @@ return {
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.auto-save-nvim" },
+  { import = "astrocommunity.editing-support.neogen" }, -- snippets for docs
+  { import = "astrocommunity.editing-support.treesj" }, -- joining and splitting lines of code
+
+  -- syntax
+  -- https://github.com/machakann/vim-sandwich keybinginds are defined here https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/syntax/vim-sandwich/init.lua
+  { import = "astrocommunity.syntax.vim-sandwich" }, -- joining and splitting lines of code
 
   -- indent
   -- { import = "astrocommunity.indent.indent-tools-nvim" }, -- this is OP but i think we dont have the bindings done correctly in the default install
@@ -96,6 +109,7 @@ return {
 
   -- diagnostics
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
+  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
 
   -- pack
   { import = "astrocommunity.pack.lua" },
@@ -105,7 +119,6 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.json" },
-
   { import = "astrocommunity.pack.python-ruff" },
 
   {
@@ -125,7 +138,6 @@ return {
     end,
   },
 
-  --
   -- nv chad ui
   -- { import = "astrocommunity.pack.nvchad-ui" },
 
