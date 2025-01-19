@@ -11,7 +11,7 @@ return {
   ----------------------------------
   --- Scrolling
   { import = "astrocommunity.scrolling.satellite-nvim" }, -- sidebar
-  { import = "astrocommunity.scrolling.mini-animate" }, --  animate common Neovim actions
+  { import = "astrocommunity.scrolling.neoscroll-nvim" }, --  animate common Neovim actions <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
 
   ----------------------------------
   --- Icons
@@ -22,7 +22,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" }, -- copilot in cmp
   { import = "astrocommunity.completion.cmp-under-comparator" }, -- sort items starting with underlines
   { import = "astrocommunity.completion.magazine-nvim" }, --"beta" nvim-cmp to fix bugs n new features early
-  -- { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
+  { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
 
   ----------------------------------
   --- Git
@@ -95,6 +95,7 @@ return {
   { import = "astrocommunity.motion.mini-ai" }, -- learn this va etc
   -- { import = "astrocommunity.motion.mini-move" }, --moving lines but its not colemak suitable
   -- { import = "astrocommunity.motion.nvim-surround" }, -- alternative to vim-sandwich
+  -- { import = "astrocommunity.motion.mini-surround" }, -- alternative to vim-sandwich
 
   ----------------------------------
   -- Project
@@ -110,13 +111,14 @@ return {
   { import = "astrocommunity.editing-support.neogen" }, -- snippets for docs
   { import = "astrocommunity.editing-support.treesj" }, -- joining and splitting lines of code <leader>m
   { import = "astrocommunity.editing-support.cutlass-nvim" }, -- delete doesnt affect yank
+  { import = "astrocommunity.editing-support.mini-operators" }, -- g= evaluate, gx exchange, gm multiply, gr replace, gs sort
   -- { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   -- { import = "astrocommunity.editing-support.dial-nvim" },
 
   ----------------------------------
   -- Syntax
-  { import = "astrocommunity.syntax.vim-sandwich" }, -- surroundings sa, sd ,sr
+  -- { import = "astrocommunity.syntax.vim-sandwich" }, -- surroundings sa, sd ,sr
 
   ----------------------------------
   -- Indent
