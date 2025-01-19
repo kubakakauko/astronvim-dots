@@ -7,118 +7,139 @@ return {
   "AstroNvim/astrocommunity",
 
   -- import/override with your plugins folder
-  { import = "astrocommunity.scrolling.satellite-nvim" },
 
-  -- icons
-  { import = "astrocommunity.icon.mini-icons" }, -- checkhealth told me install this
+  ----------------------------------
+  --- Scrolling
+  { import = "astrocommunity.scrolling.satellite-nvim" }, -- sidebar
+  { import = "astrocommunity.scrolling.mini-animate" }, --  animate common Neovim actions
 
-  -- completion
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.completion.cmp-under-comparator" },
-  { import = "astrocommunity.completion.magazine-nvim" }, --Magazine.nvim is a "beta" nvim-cmp to fix bugs & implement new features early
-  -- { import = "astrocommunity/completion/blink-cmp" },
+  ----------------------------------
+  --- Icons
+  { import = "astrocommunity.icon.mini-icons" }, -- icon provider
 
-  -- git
-  { import = "astrocommunity.git.fugit2-nvim" },
+  ----------------------------------
+  --- Completion
+  { import = "astrocommunity.completion.copilot-lua-cmp" }, -- copilot in cmp
+  { import = "astrocommunity.completion.cmp-under-comparator" }, -- sort items starting with underlines
+  { import = "astrocommunity.completion.magazine-nvim" }, --"beta" nvim-cmp to fix bugs n new features early
+  -- { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
 
-  -- quickfix
-  -- { import = "astrocommunity.quickfix.nvim-bqf" },
-  { import = "astrocommunity.quickfix.quicker-nvim" },
+  ----------------------------------
+  --- Git
+  { import = "astrocommunity.git.fugit2-nvim" }, -- git helper
 
-  -- split and windows
-  -- { import = "astrocommunity.split-and-window.windows-nvim" },
-  -- { import = "astrocommunity.split-and-window.edgy-nvim" },
+  ----------------------------------
+  --- Quickfix
+  { import = "astrocommunity.quickfix.quicker-nvim" }, -- workflow and UI enhancements for qf
 
-  -- keybindings
-  { import = "astrocommunity.keybinding.hydra-nvim" },
-  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
+  ----------------------------------
+  --- Keybinding
+  { import = "astrocommunity.keybinding.hydra-nvim" }, -- submodels and menus
+  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" }, -- cheatsheet <F1>
+  ----------------------------------
+  -- Strartup
+  { import = "astrocommunity.startup.fsplash-nvim" }, -- splash screen
 
-  -- strartup
-  { import = "astrocommunity.startup.fsplash-nvim" },
-
-  -- terminal integration
+  ----------------------------------
+  -- Terminal integration
   { import = "astrocommunity.terminal-integration.flatten-nvim" }, -- open files from terminal in current nvim instance
   { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" }, -- telescope visualization of terminals
 
-  -- compiler
+  ----------------------------------
+  -- Compiler
   { import = "astrocommunity.code-runner.compiler-nvim" },
   { import = "astrocommunity.code-runner.molten-nvim" },
 
-  -- utility
-  -- { import = "astrocommunity.utility.noice-nvim" },
+  ----------------------------------
+  -- Utility
   { import = "astrocommunity.utility.hover-nvim" },
   { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
   { import = "astrocommunity.utility.telescope-lazy-nvim" },
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
-  { import = "astrocommunity.utility.nvim-toggler" },
-
-  --this may be fucky
+  { import = "astrocommunity.utility.nvim-toggler" }, -- <Leader>i
   { import = "astrocommunity/utility/mason-tool-installer-nvim" },
+  -- { import = "astrocommunity.utility.noice-nvim" },
 
-  -- workflow
+  ----------------------------------
+  -- Workflow
   -- { import = "astrocommunity.workflow.hardtime-nvim" },
   -- { import = "astrocommunity.workflow.precognition-nvim" },
 
-  -- dap
+  ----------------------------------
+  -- Dap
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
 
-  -- file explorer
-  -- { import = "astrocommunity.file-explorer.oil-nvim" },
+  ----------------------------------
+  -- File explorer
   { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
 
-  -- markdown and latex
+  ----------------------------------
+  -- Markdown and latex
   { import = "astrocommunity/markdown-and-latex/render-markdown-nvim" },
 
-  -- game
+  ----------------------------------
+  -- Game
   { import = "astrocommunity.game.leetcode-nvim" },
 
-  -- colorscheme
+  ----------------------------------
+  -- Colorscheme
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.colorscheme", lazy = false },
 
-  -- motion
+  ----------------------------------
+  -- Motion
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.hop-nvim" },
+  { import = "astrocommunity.motion.mini-ai" }, -- learn this va etc
   -- { import = "astrocommunity.motion.mini-move" }, --moving lines but its not colemak suitable
-  { import = "astrocommunity.motion.nvim-surround" },
+  -- { import = "astrocommunity.motion.nvim-surround" }, -- alternative to vim-sandwich
 
-  -- project
-  { import = "astrocommunity.search.nvim-spectre" },
+  ----------------------------------
+  -- Project
+  { import = "astrocommunity.search.nvim-spectre" }, -- replace
 
-  -- editing support 
-  -- { import = "astrocommunity.editing-support.dial-nvim" },
+  ----------------------------------
+  -- Editing support
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.copilotchat-nvim" },
-  -- { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.auto-save-nvim" },
   { import = "astrocommunity.editing-support.neogen" }, -- snippets for docs
-  { import = "astrocommunity.editing-support.treesj" }, -- joining and splitting lines of code
+  { import = "astrocommunity.editing-support.treesj" }, -- joining and splitting lines of code <leader>m
+  { import = "astrocommunity.editing-support.cutlass-nvim" }, -- delete doesnt affect yank
+  -- { import = "astrocommunity.editing-support.multiple-cursors-nvim" },
+  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- { import = "astrocommunity.editing-support.dial-nvim" },
 
-  -- syntax
-  -- https://github.com/machakann/vim-sandwich keybinginds are defined here https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/syntax/vim-sandwich/init.lua
-  { import = "astrocommunity.syntax.vim-sandwich" }, -- joining and splitting lines of code
+  ----------------------------------
+  -- Syntax
+  { import = "astrocommunity.syntax.vim-sandwich" }, -- surroundings sa, sd ,sr
 
-  -- indent
-  -- { import = "astrocommunity.indent.indent-tools-nvim" }, -- this is OP but i think we dont have the bindings done correctly in the default install
-  -- { import = "astrocommunity.indent.mini-indentscope" },
+  ----------------------------------
+  -- Indent
+  { import = "astrocommunity.indent.mini-indentscope" }, -- indent lines
+  { import = "astrocommunity.indent.indent-blankline-nvim" }, -- indicates blanks lines
+  { import = "astrocommunity.indent.indent-tools-nvim" }, -- this is OP but i think we dont have the bindings done correctly in the default install
 
-  -- diagnostics
+  ----------------------------------
+  -- Diagnostics
   { import = "astrocommunity.diagnostics.tiny-inline-diagnostic-nvim" },
-  { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+  -- { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
 
-  -- pack
+  ----------------------------------
+  -- Pack
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.tailwindcss" },
-  -- { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python-ruff" },
 
   {
@@ -138,114 +159,44 @@ return {
     end,
   },
 
-  -- nv chad ui
-  -- { import = "astrocommunity.pack.nvchad-ui" },
-
-  --fuzzy-finder
-  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  ----------------------------------
+  --Fuzzy-finder
+  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" }, --zoxide in telescope <leader>fz
   -- { import = "astrocommunity.fuzzy-finder.fzf-lua" },
 
-  -- media
+  ----------------------------------
+  -- Media
   { import = "astrocommunity.media.image-nvim" },
 
-  -- lsp
+  ----------------------------------
+  -- Lsp
   { import = "astrocommunity.lsp.delimited-nvim" }, -- helps to move to next / pred ]D etc
-  -- { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.lsp.garbage-day-nvim" }, -- garbage collector for inactive LSPs
+  { import = "astrocommunity.lsp.nvim-lint" }, -- linter complementary to the built in LSP
+  { import = "astrocommunity.lsp.lspsaga-nvim" }, -- better looking LSP UI
+  { import = "astrocommunity.lsp.lsplinks-nvim" }, -- gx links to the documents
+  { import = "astrocommunity.lsp.ts-error-translator-nvim" }, -- ts errors translator
+  { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- shows function signature when you type
   -- { import = "astrocommunity.lsp.actions-preview-nvim" },
   -- { import = "astrocommunity.lsp.lsp-lens-nvim"  }, -- display number of references etc
-  { import = "astrocommunity.lsp.garbage-day-nvim" },
-  { import = "astrocommunity.lsp.nvim-lint" },
-  { import = "astrocommunity.lsp.lspsaga-nvim" },
-  { import = "astrocommunity.lsp.lsplinks-nvim" },
 
-  -- recipes
-  { import = "astrocommunity.recipes.neovide" },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
-  -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
-  -- { import = "astrocommunity.recipes.telescope-nvchad-theme" },
+  ----------------------------------
+  -- Recipes
+  { import = "astrocommunity.recipes.neovide" }, -- neovide support
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" }, -- <Leader>lG, <leader>lR
   { import = "astrocommunity.recipes.cache-colorscheme" },
   -- { import = "astrocommunity.recipes.neo-tree-dark" },
-
   -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
   -- { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  -- { import = "astrocommunity.recipes.astrolsp-no-insert-inlay-hints" },
+  -- { import = "astrocommunity.recipes.telescope-nvchad-theme" },
 
-  -- bars and lines
-  { import = "astrocommunity/bars-and-lines/dropbar-nvim" },
+  ----------------------------------
+  -- Bars and lines
+  { import = "astrocommunity/bars-and-lines/dropbar-nvim" }, -- function names at top
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" }, -- highlight words under cursor
+  { import = "astrocommunity.bars-and-lines.scope-nvim" }, -- adds the scrollbar to the right hand side
   -- { import = "astrocommunity.bars-and-lines.lualine-nvim" },
-  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   -- { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
   -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
-  -- adds the scrollbar to the right hand side
-  { import = "astrocommunity.bars-and-lines.scope-nvim" },
-
-  -- { import = "astrocommunity.workflow.hardtime-nvim" },
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   opts = function(_, opts)
-  --     -- Add the `neo-tree` filetype to the `disabled_filetypes` option
-  --     opts.options = vim.tbl_extend("force", opts.options or {}, {
-  --       disabled_filetypes = {
-  --         statusline = {},
-  --         winbar = { "neo-tree" },
-  --       },
-  --     })
-  --
-  --     opts.winbar = {
-  --       lualine_a = { "mode" },
-  --       lualine_b = { "branch", "diff", "diagnostics" },
-  --       lualine_c = {
-  --         {
-  --           "filename",
-  --           path = 1,
-  --
-  --           file_status = true, -- Displays file status (readonly status, modified status)
-  --           newfile_status = false, -- Display new file status (new file means no write after created)
-  --
-  --           shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-  --           -- for other components. (terrible name, any suggestions?)
-  --           symbols = {
-  --             modified = "", -- Text to show when the file is modified.
-  --             readonly = "", -- Text to show when the file is non-modifiable or readonly.
-  --             unnamed = "", -- Text to show for unnamed buffers.
-  --             newfile = "", -- Text to show for newly created file before first write
-  --             directory = "",
-  --             oil = "",
-  --           },
-  --
-  --           filetype_names = {
-  --             TelescopePrompt = "Telescope ",
-  --             dashboard = "Dashboard",
-  --             packer = "Packer",
-  --             fzf = "FZF",
-  --             alpha = "Dashboard",
-  --             oil = "",
-  --           },
-  --         },
-  --       },
-  --       lualine_x = { "encoding", "fileformat", "filetype" },
-  --       lualine_y = {
-  --         { "progress" },
-  --         {
-  --           "searchcount",
-  --           maxcount = 999,
-  --           timeout = 500,
-  --         },
-  --       },
-  --       lualine_z = { "location" },
-  --     }
-  --
-  --     opts.inactive_winbar = {
-  --       lualine_c = opts.winbar.lualine_c,
-  --       lualine_x = {},
-  --       lualine_y = {},
-  --       lualine_z = {},
-  --     }
-  --
-  --     opts.sections = {}
-  --     opts.inactive_sections = {}
-  --     opts.extentensions = { "fugitive", "nvim-tree", "quickfix", "toggleterm", "packer", "oil" }
-  --
-  --     return opts
-  --   end,
-  -- },
 }
