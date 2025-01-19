@@ -22,7 +22,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" }, -- copilot in cmp
   { import = "astrocommunity.completion.cmp-under-comparator" }, -- sort items starting with underlines
   { import = "astrocommunity.completion.magazine-nvim" }, --"beta" nvim-cmp to fix bugs n new features early
-  { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
+  -- { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
 
   ----------------------------------
   --- Git
