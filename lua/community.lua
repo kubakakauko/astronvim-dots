@@ -22,7 +22,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" }, -- copilot in cmp
   { import = "astrocommunity.completion.cmp-under-comparator" }, -- sort items starting with underlines
   { import = "astrocommunity.completion.magazine-nvim" }, --"beta" nvim-cmp to fix bugs n new features early
-  -- { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
+  { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
 
   ----------------------------------
   --- Git
@@ -95,7 +95,22 @@ return {
   { import = "astrocommunity.motion.mini-ai" }, -- learn this va etc
   -- { import = "astrocommunity.motion.mini-move" }, --moving lines but its not colemak suitable
   -- { import = "astrocommunity.motion.nvim-surround" }, -- alternative to vim-sandwich
-  -- { import = "astrocommunity.motion.mini-surround" }, -- alternative to vim-sandwich
+  { import = "astrocommunity.motion.mini-surround" }, -- alternative to vim-sandwich
+  -- Key Bindings for mini.surround Plugin (using "gz" as the prefix)
+  -- gza : Add surrounding in Normal and Visual modes.
+  --       Example: Add brackets, quotes, etc., around text.
+  -- gzd : Delete surrounding.
+  --       Example: Remove brackets, quotes, etc., around text.
+  -- gzf : Find the surrounding to the right.
+  --       Moves the cursor to the next occurrence of the specified surrounding.
+  -- gzF : Find the surrounding to the left.
+  --       Moves the cursor to the previous occurrence of the specified surrounding.
+  -- gzh : Highlight surrounding.
+  --       Highlights the surrounding characters around the cursor for easy visualization.
+  -- gzr : Replace surrounding.
+  --       Replaces the current surrounding (e.g., change quotes to brackets).
+  -- gzn : Update `n_lines` in the mini.surround configuration.
+  --       Dynamically changes the number of lines to search for surrounding elements.
 
   ----------------------------------
   -- Project
