@@ -27,6 +27,7 @@ return {
   ----------------------------------
   --- Git
   { import = "astrocommunity.git.fugit2-nvim" }, -- git helper
+  { import = "astrocommunity.git.diffview-nvim" }, -- git diffview and merge functionality (see commands)
 
   ----------------------------------
   --- Quickfix
