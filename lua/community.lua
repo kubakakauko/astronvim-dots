@@ -11,7 +11,7 @@ return {
   ----------------------------------
   --- Scrolling
   { import = "astrocommunity.scrolling.satellite-nvim" }, -- sidebar
-  { import = "astrocommunity.scrolling.neoscroll-nvim" }, --  animate common Neovim actions <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
+  -- { import = "astrocommunity.scrolling.neoscroll-nvim" }, --  animate common Neovim actions <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
 
   ----------------------------------
   --- Icons
@@ -22,7 +22,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" }, -- copilot in cmp
   { import = "astrocommunity.completion.cmp-under-comparator" }, -- sort items starting with underlines
   { import = "astrocommunity.completion.magazine-nvim" }, --"beta" nvim-cmp to fix bugs n new features early
-  { import = "astrocommunity/completion/blink-cmp" }, -- completion plugin
+  { import = "astrocommunity.completion.blink-cmp" }, -- completion plugin
 
   ----------------------------------
   --- Git
@@ -35,7 +35,7 @@ return {
 
   ----------------------------------
   --- Keybinding
-  { import = "astrocommunity.keybinding.hydra-nvim" }, -- submodels and menus
+  -- { import = "astrocommunity.keybinding.hydra-nvim" }, -- submodels and menus
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" }, -- cheatsheet <F1>
   ----------------------------------
   -- Strartup
@@ -43,8 +43,8 @@ return {
 
   ----------------------------------
   -- Terminal integration
-  { import = "astrocommunity.terminal-integration.flatten-nvim" }, -- open files from terminal in current nvim instance
-  { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" }, -- telescope visualization of terminals
+  -- { import = "astrocommunity.terminal-integration.flatten-nvim" }, -- open files from terminal in current nvim instance
+  -- { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" }, -- telescope visualization of terminals
 
   ----------------------------------
   -- Compiler
@@ -54,8 +54,8 @@ return {
   ----------------------------------
   -- Utility
   { import = "astrocommunity.utility.hover-nvim" },
-  { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
-  { import = "astrocommunity.utility.telescope-lazy-nvim" },
+  -- { import = "astrocommunity.utility.telescope-fzy-native-nvim" },
+  -- { import = "astrocommunity.utility.telescope-lazy-nvim" },
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
   { import = "astrocommunity.utility.nvim-toggler" }, -- <Leader>i
   { import = "astrocommunity/utility/mason-tool-installer-nvim" },
@@ -68,17 +68,17 @@ return {
 
   ----------------------------------
   -- Dap
-  { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
-  { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
-  { import = "astrocommunity.debugging.telescope-dap-nvim" },
+  -- { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
+  -- { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
+  -- { import = "astrocommunity.debugging.telescope-dap-nvim" },
 
   ----------------------------------
   -- File explorer
-  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+  -- { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
 
   ----------------------------------
   -- Markdown and latex
-  { import = "astrocommunity/markdown-and-latex/render-markdown-nvim" },
+  -- { import = "astrocommunity/markdown-and-latex/render-markdown-nvim" },
 
   ----------------------------------
   -- Game
@@ -162,7 +162,7 @@ return {
 
   ----------------------------------
   --Fuzzy-finder
-  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" }, --zoxide in telescope <leader>fz
+  -- { import = "astrocommunity.fuzzy-finder.telescope-zoxide" }, --zoxide in telescope <leader>fz
   -- { import = "astrocommunity.fuzzy-finder.fzf-lua" },
 
   ----------------------------------
@@ -171,20 +171,20 @@ return {
 
   ----------------------------------
   -- Lsp
-  { import = "astrocommunity.lsp.delimited-nvim" }, -- helps to move to next / pred ]D etc
+  -- { import = "astrocommunity.lsp.delimited-nvim" }, -- helps to move to next / pred ]D etc
   { import = "astrocommunity.lsp.garbage-day-nvim" }, -- garbage collector for inactive LSPs
-  { import = "astrocommunity.lsp.nvim-lint" }, -- linter complementary to the built in LSP
-  { import = "astrocommunity.lsp.lspsaga-nvim" }, -- better looking LSP UI
-  { import = "astrocommunity.lsp.lsplinks-nvim" }, -- gx links to the documents
-  { import = "astrocommunity.lsp.ts-error-translator-nvim" }, -- ts errors translator
-  { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- shows function signature when you type
+  -- { import = "astrocommunity.lsp.nvim-lint" }, -- linter complementary to the built in LSP
+  -- { import = "astrocommunity.lsp.lspsaga-nvim" }, -- better looking LSP UI
+  -- { import = "astrocommunity.lsp.lsplinks-nvim" }, -- gx links to the documents
+  -- { import = "astrocommunity.lsp.ts-error-translator-nvim" }, -- ts errors translator
+  -- { import = "astrocommunity.lsp.lsp-signature-nvim" }, -- shows function signature when you type
   -- { import = "astrocommunity.lsp.actions-preview-nvim" },
   -- { import = "astrocommunity.lsp.lsp-lens-nvim"  }, -- display number of references etc
 
   ----------------------------------
   -- Recipes
   { import = "astrocommunity.recipes.neovide" }, -- neovide support
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" }, -- <Leader>lG, <leader>lR
+  -- { import = "astrocommunity.recipes.telescope-lsp-mappings" }, -- <Leader>lG, <leader>lR
   { import = "astrocommunity.recipes.cache-colorscheme" },
   -- { import = "astrocommunity.recipes.neo-tree-dark" },
   -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
